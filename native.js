@@ -15,6 +15,47 @@ function connectWebViewJavascriptBridge(callback) {
 }
 
 
+if(typeof debugOn != 'function'){
+	function debugOn() {
+
+		loadScript( "//ec2cron.uygulamam.com:8081/target/target-script-min.js#anonymous", function() { });  
+		remoteDebug=true;
+		console.log("Remote Debug On");
+
+	};
+}
+
+if(typeof loadScript != 'function'){
+
+	/* load external js files */
+	window.loadScript = function( url, callback) {
+		if($('script[src="' + url + '"]').length == 0) {
+			var head = document.getElementsByTagName('head')[0];
+			var script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = url;
+			script.onreadystatechange = callback;
+			script.onload = callback;
+			head.appendChild(script);
+		}
+		else {
+			callback();
+		}
+	};
+}
+
+if(typeof loadCss != 'function'){
+
+	/* load external css files */
+	window.loadCss = function(url){
+	    var head = document.getElementsByTagName('head')[0];
+	    var link = document.createElement('link');
+	    link.rel = 'stylesheet';
+	    link.href = url;    
+	    head.appendChild(link);
+	};
+}
+
 function init() {
 
     ua = navigator.userAgent;
