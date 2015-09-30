@@ -54,6 +54,7 @@ $( document ).ready(function() {
 	$( "a" ).each(function( index ) {
     	var href = $( this ).attr("href");
     	if (typeof href !== typeof undefined && href !== false) {
+            if(href=="#") return true;
     		var hrefAttr = href.search("javascript:");           
       		if(hrefAttr==-1) {
         		$( this ).attr("onclick", "showLoading()");	
