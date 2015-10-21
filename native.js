@@ -167,7 +167,7 @@ function openMap(xPoint, yPoint, label) {
         sendBridge({"method":"openMap", "xPoint":xPoint, "yPoint":yPoint, "label":label});
 
     if(!android && !iphone) {
-        window.parent.showAlert("Önizleme ekranında bu özellik çalışmamaktadır.");
+        alert("Önizleme ekranında bu özellik çalışmamaktadır.");
     }
 }
 
@@ -189,7 +189,7 @@ function openBrowser(service, url) {
         sendBridge({"method":"openBrowser", "service":service, "url":url});
 
     if(!android && !iphone) {
-        window.parent.showAlert("Önizleme ekranında bu özellik çalışmamaktadır.");
+        window.location=url;
     }
 }
 
@@ -208,7 +208,7 @@ function feedsURL(url) {
     }
     
     if(!android && !iphone) {
-        window.parent.showAlert("Önizleme ekranında bu özellik çalışmamaktadır.");
+        alert("Önizleme ekranında bu özellik çalışmamaktadır.");
     }
 }
 
@@ -227,7 +227,7 @@ function mySocial(service, url) {
     }
     
     if(!android && !iphone) {
-        window.parent.showAlert("Önizleme ekranında bu özellik çalışmamaktadır.");
+        alert("Önizleme ekranında bu özellik çalışmamaktadır.");
     }
 }
 
@@ -238,7 +238,7 @@ function call(number) {
         sendBridge({"method":"call", "number":number});
 
     if(!android && !iphone) {
-        window.parent.showAlert("Önizleme ekranında bu özellik çalışmamaktadır.");
+        alert("Önizleme ekranında bu özellik çalışmamaktadır.");
     }
 }
 
@@ -249,7 +249,7 @@ function email(email, title) {
         sendBridge({"method":"email", "email":email, "title":title});
 
     if(!android && !iphone) {
-        window.parent.showAlert("Önizleme ekranında bu özellik çalışmamaktadır.");
+        alert("Önizleme ekranında bu özellik çalışmamaktadır.");
     }
 }
 
@@ -285,7 +285,7 @@ function goBack() {
     }
 
     if(!android && !iphone) {
-        window.parent.showAlert("Önizleme ekranında bu özellik çalışmamaktadır.");
+        alert("Önizleme ekranında bu özellik çalışmamaktadır.");
     }
 }
 
